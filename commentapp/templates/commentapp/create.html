@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <form action="{% url 'commentapp:create' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary" >
+            <input type="hidden" name="article_pk" value="">
+        </form>
+    </div>
+{% endblock %}
